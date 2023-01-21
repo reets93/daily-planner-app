@@ -8,8 +8,9 @@ textarea {
   background: transparent;
   border: none;
   resize: none;
+  width: 100%;
   color: #000000;
-  border-left: 1px solid black;
+  /* border-left: 1px solid black; */
   padding: 10px;
 }
 
@@ -18,7 +19,7 @@ textarea {
   background-color: transparent;
   color: black;
   border-radius: 0;
-  border-bottom: 10px solid black;
+  border-bottom: 8px solid black;
 }
 
 .description {
@@ -32,7 +33,7 @@ textarea {
 
 .row {
   white-space: pre-wrap;
-  height: 80px;
+  height: auto;
   border-top: 1px solid white;
 }
 
@@ -40,6 +41,8 @@ textarea {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  border-right: 1px solid #000000;
+  align-items: center;
 }
 
 .past {
@@ -63,9 +66,15 @@ textarea {
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
+  text-align: center;
+  text-justify: center;
 }
 
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+}
+
+.fa-floppy-disk {
+  color:white;
 }
