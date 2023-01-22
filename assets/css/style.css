@@ -6,12 +6,14 @@ body {
 
 textarea {
   background: transparent;
+  align-items: top;
   border: none;
   resize: none;
   width: 100%;
+  height: 100px;
   color: #000000;
   /* border-left: 1px solid black; */
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 .jumbotron {
