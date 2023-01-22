@@ -8,7 +8,8 @@
 var currentDate = moment(); // 24 March 2023
 $("#currentDay").text(currentDate.format("dddd Do MMMM YYYY")).css('color','orange')
 
-
+var currentTime = moment();
+console.log(currentTime)
 
 // Present timeblocks for standard business hours when the user scrolls down.
 var businessHours = 8
@@ -18,7 +19,7 @@ for (i=0; i<businessHours; i++) {
 
 var time0 = moment("9","h a");
 $('#t0').text(time0.format("h a"))
-colorCode(time0, "#t0")
+colorCode(time0, "#0") 
 
 var time1 = moment("10","h a");
 $('#1').text(time1.format("h a"))
@@ -36,11 +37,9 @@ var time4 = moment("13","h a");
 $('#4').text(time4.format("h a"))
 colorCode(time4, "#4")
 
-
 var time5 = moment("14","h a");
 $('#5').text(time5.format("h a"))
 colorCode(time5, "#5")
-
 
 var time6 = moment("15","h a");
 $('#6').text(time6.format("h a"))
@@ -55,36 +54,30 @@ $('#8').text(time8.format("h a"))
 colorCode(time8, "#8")
 
 
-
 // Color-code each timeblock based on past, present, and future when the timeblock is viewed.
-var textArea = document.querySelectorAll("textarea")
 function colorCode(time, block) { // block = the row id
-if (time >= moment()) {
-    $(block).children().eq(1).attr("class",".past")
-    console.log("isbefore")
-} else if (time <= moment()) {
-    $(block).children().eq(1).attr("class",".future")
-    console.log("future")
-} else if (time == moment()) {
-    $(block).children().eq(1).attr("class",".present")
-    console.log("now")
+if (currentTime.isBefore(time)) {
+    $(block).children().eq(1).addClass("future")
+    console.log(time + "," + block+ ":" + currentTime + "future")
+} else if (currentTime.isAfter(time)) {
+    $(block).children().eq(1).addClass("past")
+    console.log(time + ":" + currentTime + "past")
+} else {
+    $(block).children().eq(1).addClass("present")
+    console.log(time + ":" + currentTime + "now")
+// $(block).children().eq(1).addClass("present") //correct targeting
+console.log(time)
 }
 }
 
-$("#0").children().eq(1).children().attr("class","past")
+var textArea = document.querySelectorAll("textarea")
+var textInput = textArea.value
 
-
-// if (#timeblock.isbefore() {
-    //change to grey}
-    // else if (#timeblock.isafter()) {
-    //change to green
-//     } else {
-    //change to red
-// }
-// })
-
-
-// momentObj.isBefore()
-
-// Or in the future:
-// momentObj.isAfter()
+// Save the event in local storage when the save button is clicked in that timeblock.
+var saveBtn = $('.saveBtn')
+saveBtn.on('click', function() {
+    console.log('saveBtn')
+    localStorage.setItem("to-do",textInput)
+    console.log(localStorage.getItem("to-do"))
+}
+)
