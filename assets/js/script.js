@@ -23,35 +23,35 @@ colorCode(time0, "#0")
 
 var time1 = moment("10","h a");
 $('#1').text(time1.format("h a"))
-colorCode(time1, "#1")
+colorCode(time1, "#01")
 
 var time2 = moment("11","h a");
 $('#2').text(time2.format("h a"))
-colorCode(time2, "#2")
+colorCode(time2, "#02")
 
 var time3 = moment("12","h a");
 $('#3').text(time3.format("h a"))
-colorCode(time3, "#3")
+colorCode(time3, "#03")
 
 var time4 = moment("13","h a");
 $('#4').text(time4.format("h a"))
-colorCode(time4, "#4")
+colorCode(time4, "#04")
 
 var time5 = moment("14","h a");
 $('#5').text(time5.format("h a"))
-colorCode(time5, "#5")
+colorCode(time5, "#05")
 
 var time6 = moment("15","h a");
 $('#6').text(time6.format("h a"))
-colorCode(time6, "#6")
+colorCode(time6, "#06")
 
 var time7 = moment("16","h a");
 $('#7').text(time7.format("h a"))
-colorCode(time7, "#7")
+colorCode(time7, "#07")
 
 var time8 = moment("17","h a");
 $('#8').text(time8.format("h a"))
-colorCode(time8, "#8")
+colorCode(time8, "#08")
 
 
 // Color-code each timeblock based on past, present, and future when the timeblock is viewed.
