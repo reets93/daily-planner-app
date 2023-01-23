@@ -9,7 +9,7 @@ Using the save button will save the inputted content for that particular time sl
 
 ## Usage
 
-Live deployed page: 
+Live deployed page: https://reets93.github.io/work-day-planner-app/ 
 
 To use this app, enter text in the time slot areas. Saved inputs will be visible on refresh on the page.
 
