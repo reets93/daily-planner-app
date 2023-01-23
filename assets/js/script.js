@@ -1,17 +1,12 @@
-// Color-code each timeblock based on past, present, and future when the timeblock is viewed.
-// Allow a user to enter an event when they click a timeblock
-// Save the event in local storage when the save button is clicked in that timeblock.
-// Persist events between refreshes of a page
-
-
 // displays current day at top of calendar
 var currentDate = moment(); // 24 March 2023
-$("#currentDay").text(currentDate.format("dddd Do MMMM YYYY")).css('color', 'orange')
+$("#currentDay").text(currentDate.format("dddd Do MMMM YYYY")).css('color', 'blue')
 
 var currentTime = moment();
 var currentHour = moment().format("h a")
 var currentMinute = moment().format("mm")
 console.log(currentTime + " ; " + currentHour + " ; " + currentMinute)
+
 
 // Present timeblocks for standard business hours when the user scrolls down.
 var businessHours = 9;
@@ -68,8 +63,8 @@ $('#ta8').text(localStorage.getItem("item8"))
 // Color-code each timeblock based on past, present, and future when the timeblock is viewed.
 function colorCode(time, block) { // block = the row id
     var endTimeSlot = time.add(59, 'm')
-    // if (currentTime.isBetween(time, endTimeSlot, 'minutes', []) === true) {
-    if (time < currentTime > endTimeSlot) {
+    if (currentTime.isBetween(time, endTimeSlot, 'minutes', []) == true) {
+    // if (time < currentTime > endTimeSlot) {
         $(block).children().eq(1).addClass("present")
         console.log(time + ":" + currentTime + "now" + " endTimeSlot: " + endTimeSlot)
     } else {
@@ -85,7 +80,6 @@ function colorCode(time, block) { // block = the row id
 
 
 // Save the event in local storage when the save button is clicked in that timeblock.
-
 var saveBtn = $('.saveBtn')
 
 function save(button, key, ta) {
