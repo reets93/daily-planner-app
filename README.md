@@ -10,11 +10,10 @@ Using the save button will save the inputted content for that particular time sl
 ## Usage
 
 Live deployed page: 
+
 To use this app, enter text in the time slot areas. Saved inputs will be visible on refresh on the page.
 
-![alt text](assets/images/screenshot.png)
-![alt text](assets/images/screenshot.png)
-![alt text](assets/images/screenshot.png)
+![alt text](assets/screenshots/1.png)
 
 
 ## License

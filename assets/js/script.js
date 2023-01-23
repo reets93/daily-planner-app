@@ -63,7 +63,7 @@ $('#ta8').text(localStorage.getItem("item8"))
 // Color-code each timeblock based on past, present, and future when the timeblock is viewed.
 function colorCode(time, block) { // block = the row id
     var endTimeSlot = time.add(59, 'm')
-    if (currentTime.isBetween(time, endTimeSlot, 'minutes', []) == true) {
+    if (currentTime.isBetween(time, endTimeSlot, 'minutes', []) === true) {
     // if (time < currentTime > endTimeSlot) {
         $(block).children().eq(1).addClass("present")
         console.log(time + ":" + currentTime + "now" + " endTimeSlot: " + endTimeSlot)
