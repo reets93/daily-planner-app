@@ -24,18 +24,15 @@ $('#t0').text(time0.format("h a"))
 colorCode(time0, "#0")
 $('#ta0').text(localStorage.getItem("item0"))
 
-
 var time1 = moment("10", "h a");
 $('#1').text(time1.format("h a"))
 colorCode(time1, "#01")
 $('#ta1').text(localStorage.getItem("item1"))
 
-
 var time2 = moment("11", "h a");
 $('#2').text(time2.format("h a"))
 colorCode(time2, "#02")
 $('#ta2').text(localStorage.getItem("item2"))
-
 
 var time3 = moment("12", "h a");
 $('#3').text(time3.format("h a"))
@@ -72,7 +69,7 @@ $('#ta8').text(localStorage.getItem("item8"))
 function colorCode(time, block) { // block = the row id
     var endTimeSlot = time.add(59, 'm')
     // if (currentTime.isBetween(time, endTimeSlot, 'minutes', []) === true) {
-        if (time < currentTime > endTimeSlot) {
+    if (time < currentTime > endTimeSlot) {
         $(block).children().eq(1).addClass("present")
         console.log(time + ":" + currentTime + "now" + " endTimeSlot: " + endTimeSlot)
     } else {
@@ -87,67 +84,23 @@ function colorCode(time, block) { // block = the row id
 }
 
 
-
 // Save the event in local storage when the save button is clicked in that timeblock.
 
-$('#save0').on('click', function() {
-    console.log("save0");
-    localStorage.setItem("item0", $('#ta0').val())
+var saveBtn = $('.saveBtn')
+
+function save(button, key, ta) {
+    $(button).on('click', function () {
+        console.log(button)
+        localStorage.setItem(key, $(ta).val())
+    })
 }
- )
 
- $('#save1').on('click', function() {
-    console.log("save1");
-    localStorage.setItem("item1", $('#ta1').val())
-}
- )
-
- $('#save2').on('click', function() {
-    console.log("save2");
-    localStorage.setItem("item2", $('#ta2').val())
-}
- )
-
- $('#save3').on('click', function() {
-    console.log("save3");
-    localStorage.setItem("item3", $('#ta3').val())
-}
- )
-
- $('#save4').on('click', function() {
-    console.log("save4");
-    localStorage.setItem("item4", $('#ta4').val())
-}
- )
-
- $('#save5').on('click', function() {
-    console.log("save5");
-    localStorage.setItem("item5", $('#ta5').val())
-}
- )
-
- $('#save6').on('click', function() {
-    console.log("save6");
-    localStorage.setItem("item6", $('#ta6').val())
-}
- )
-
- $('#save7').on('click', function() {
-    console.log("save7");
-    localStorage.setItem("item7", $('#ta7').val())
-}
- )
-
- $('#save8').on('click', function() {
-    console.log("save8");
-    localStorage.setItem("item8", $('#ta8').val())
-}
- )
-
- $('#save9').on('click', function() {
-    console.log("save9");
-    localStorage.setItem("item9", $('#ta9').val())
-}
- )
-
-
+save("#save0","item0","#ta0")
+save("#save1","item1","#ta1")
+save("#save2","item2","#ta2")
+save("#save3","item3","#ta3")
+save("#save4","item4","#ta4")
+save("#save5","item5","#ta5")
+save("#save6","item6","#ta6")
+save("#save7","item7","#ta7")
+save("#save8","item8","#ta8")
